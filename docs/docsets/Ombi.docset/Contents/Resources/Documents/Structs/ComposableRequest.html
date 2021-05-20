@@ -17,7 +17,7 @@
     <a title="ComposableRequest Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Ombi Docs</a> (84% documented)</p>
+        <p><a href="../index.html">Ombi Docs</a> (85% documented)</p>
         <p class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -136,7 +136,7 @@
 
                 </div>
               </div>
-            <p>A <code>ComposableRequest</code> is a generic type used to execute HTTP requests without needing to type request-specific types.</p>
+            <p>A <code>ComposableRequest</code> is a generic type used to execute HTTP requests without needing to create request-specific <code><a href="../Protocols/Requestable.html">Requestable</a></code> types.</p>
 
 <p>Basic usage might look like this:</p>
 <pre class="highlight swift"><code><span class="n">cancellable</span> <span class="o">=</span> <span class="kt">ComposableRequest</span><span class="o">&lt;</span><span class="kt">AnyJSON</span><span class="p">,</span> <span class="kt">AnyJSON</span><span class="p">,</span> <span class="kt">HTTPError</span><span class="o">&gt;</span><span class="p">()</span>
