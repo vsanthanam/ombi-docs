@@ -149,6 +149,38 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>A generic value type to decode response body content from <code>Data</code></p>
+<h1 id='usage' class='heading'>Usage</h1>
+
+<p>Typically, you will want to re-use body decoders for a given type.</p>
+
+<p>The best way to do this is to declare a your decoder in a type-constrained extensions</p>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">BodyDecoder</span> <span class="k">where</span> <span class="kt">Body</span> <span class="o">==</span> <span class="kt">MyType</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="kd">var</span> <span class="p">`</span><span class="nv">default</span><span class="p">`:</span> <span class="k">Self</span> <span class="p">{</span>
+        <span class="o">.</span><span class="kd">init</span> <span class="p">{</span> <span class="n">body</span> <span class="k">in</span>
+            <span class="c1">// Convert `MyType?` into `Data?` or throw an error</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Then, declare a type-constrained extension <a href="x-source-tag://Requestable">Requestable</a></p>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">Requestable</span> <span class="k">where</span> <span class="kt">RequestBody</span> <span class="o">==</span> <span class="kt">MyType</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">requestEncoder</span><span class="p">:</span> <span class="kt">BodyEncoder</span><span class="o">&lt;</span><span class="kt">RequestBody</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="o">.</span><span class="k">default</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p>Ombi provides default body encoders for the following types:</p>
+
+<ul>
+<li><code>String</code></li>
+<li><code>Data</code></li>
+<li><code><a href="Structs/AnyJSON.html">AnyJSON</a></code></li>
+<li>Models that conform to<code>Encodable</code></li>
+</ul>
+
+<p>See similar types <a href="x-source-tag://BodyEncoder">BodyEncoder</a> and <a href="x-source-tag://BodyDecoder">ResponseValidator</a></p>
 
                         <a href="Structs/BodyDecoder.html" class="slightly-smaller">See more</a>
                       </div>
