@@ -16,7 +16,7 @@
     <a title="Ombi  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Ombi 1.0.1 Docs</a> (95% documented)</p>
+        <p><a href="index.html">Ombi 1.0.2 Docs</a> (95% documented)</p>
         <p class="header-right"><a href="https://www.github.com/vsanthanam/Ombi"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdocs.ombi.network%2Fdocsets%2FOmbi.xml"><img src="img/dash.png"/>Install in Dash</a></p>
         <p class="header-right">
@@ -163,12 +163,12 @@ It requires Combine to work correctly, and does not support Swift runtime enviro
 
 <p>Add <code>Ombi</code> to your <code>Package.swift</code> file like so:</p>
 <pre class="highlight swift"><code><span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
-    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/vsanthanam/Ombi.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"1.0"</span><span class="p">))</span>
+    <span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/vsanthanam/Ombi.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"1.0.0"</span><span class="p">))</span>
 <span class="p">]</span>
 </code></pre>
 <h3 id='documentation' class='heading'>Documentation</h3>
 
-<p>You can view the documentation for the latest stable release at <a href="https://docs.ombi.network">docs.ombi.network</a>. For any given copy of the repository, you can generate version specific docs using <code>jazzy</code> and the included script:</p>
+<p>You can view the documentation for the latest stable release at <a href="https://docs.ombi.network">docs.ombi.network</a>. For any given copy of the repository, you can generate version specific docs using <a href="https://github.com/realm/jazzy">jazzy</a> and the included script:</p>
 <pre class="highlight plaintext"><code>$ cd path to repo
 $ ./gen-docs.sh
 </code></pre>
@@ -188,9 +188,9 @@ You will recieve a <code>Publisher</code> which will allow you to handle network
 <span class="c1">// Define `Requestable`</span>
 <span class="kd">struct</span> <span class="kt">MyRequest</span><span class="p">:</span> <span class="kt">Requestable</span> <span class="p">{</span>
 
-    <span class="kd">typealias</span> <span class="kt">RequestBody</span> <span class="o">==</span> <span class="kt">AnyJSON</span>
-    <span class="kd">typealias</span> <span class="kt">ResponseBody</span> <span class="o">==</span> <span class="kt">String</span>
-    <span class="kd">typealias</span> <span class="kt">ResponseError</span> <span class="o">==</span> <span class="kt">HTTPError</span>
+    <span class="kd">typealias</span> <span class="kt">RequestBody</span> <span class="o">=</span> <span class="kt">AnyJSON</span>
+    <span class="kd">typealias</span> <span class="kt">ResponseBody</span> <span class="o">=</span> <span class="kt">String</span>
+    <span class="kd">typealias</span> <span class="kt">ResponseError</span> <span class="o">=</span> <span class="kt">HTTPError</span>
 
     <span class="k">var</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span>
         <span class="s">"/posts/update"</span>
@@ -247,7 +247,7 @@ You will recieve a <code>Publisher</code> which will allow you to handle network
 <p>If you are using a type not mentioned above, but still do not want to provide a encoder or decoder, make that type conform to <code><a href="Typealiases.html#/s:4Ombi19AutomaticBodyCodinga">AutomaticBodyCoding</a></code>, and <code><a href="Protocols/Requestable.html">Requestable</a></code> will generate the appropropriate encoder / decoder for you. A failure to use a type that doesn&rsquo;t provide its own encoder / decore, in conjunction with a failure to specify one within the <code><a href="Protocols/Requestable.html">Requestable</a></code> itself will result in a compile time error.</p>
 
 <p>You can create a single type for every request you might make, or you can create parameterized, reusable types:</p>
-<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">LoginRequest</span><span class="p">:</span> <span class="kt">Requestable</span>
+<pre class="highlight swift"><code><span class="kd">struct</span> <span class="kt">LoginRequest</span><span class="p">:</span> <span class="kt">HTTPRequest</span> <span class="p">{</span>
 
     <span class="nf">init</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">body</span> <span class="o">=</span> <span class="kt">RequestBody</span><span class="p">(</span><span class="nv">username</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="n">password</span><span class="p">)</span>
@@ -261,8 +261,6 @@ You will recieve a <code>Publisher</code> which will allow you to handle network
     <span class="kd">struct</span> <span class="kt">ResponseBody</span><span class="p">:</span> <span class="kt">Codable</span> <span class="p">{</span>
         <span class="k">let</span> <span class="nv">token</span><span class="p">:</span> <span class="kt">String</span>
     <span class="p">}</span>
-
-    <span class="kd">typealias</span> <span class="kt">ResponseError</span> <span class="o">=</span> <span class="kt">HTTPError</span>
 
     <span class="k">let</span> <span class="nv">path</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"/login"</span>
 
@@ -373,7 +371,7 @@ You will recieve a <code>Publisher</code> which will allow you to handle network
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://www.vsanthanam.com" target="_blank" rel="external">Varun Santhanam</a>. All rights reserved. (Last updated: 2021-05-22)</p>
+          <p>&copy; 2021 <a class="link" href="https://www.vsanthanam.com" target="_blank" rel="external">Varun Santhanam</a>. All rights reserved. (Last updated: 2021-05-23)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
