@@ -1,6 +1,20 @@
 {
   "warnings": [
     {
+      "file": "/Users/vsanthanam/Desktop/Ombi/Sources/Ombi/Extensions/BodyDecoder+Ombi.swift",
+      "line": 112,
+      "symbol": "BodyDecoder.default",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vsanthanam/Desktop/Ombi/Sources/Ombi/Extensions/BodyEncoder+Ombi.swift",
+      "line": 132,
+      "symbol": "BodyEncoder.default",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/vsanthanam/Desktop/Ombi/Sources/Ombi/Extensions/RequestHeaders+Ombi.swift",
       "line": 77,
       "symbol": "RequestHeaders.Value.string(_:)",
@@ -19,6 +33,27 @@
       "line": 85,
       "symbol": "RequestHeaders.Value.double(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vsanthanam/Desktop/Ombi/Sources/Ombi/Extensions/ResponseValidator+Ombi.swift",
+      "line": 55,
+      "symbol": "ResponseValidator.default",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vsanthanam/Desktop/Ombi/Sources/Ombi/Models/NoBody.swift",
+      "line": 28,
+      "symbol": "NoBody",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/vsanthanam/Desktop/Ombi/Sources/Ombi/Models/NoError.swift",
+      "line": 28,
+      "symbol": "NoError",
+      "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
