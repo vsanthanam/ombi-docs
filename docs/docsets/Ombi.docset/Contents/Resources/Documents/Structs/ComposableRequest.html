@@ -17,7 +17,7 @@
     <a title="ComposableRequest Structure Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Ombi 1.0.2 Docs</a> (93% documented)</p>
+        <p><a href="../index.html">Ombi 1.0.3 Docs</a> (93% documented)</p>
         <p class="header-right"><a href="https://www.github.com/vsanthanam/Ombi"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdocs.ombi.network%2Fdocsets%2FOmbi.xml"><img src="../img/dash.png"/>Install in Dash</a></p>
         <p class="header-right">
@@ -52,6 +52,12 @@
                 <a href="../Enums/HTTPError.html">HTTPError</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/RequestAuthentication.html">RequestAuthentication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RequestAuthentication/TokenType.html">– TokenType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/RequestError.html">RequestError</a>
               </li>
               <li class="nav-group-task">
@@ -62,6 +68,9 @@
           <li class="nav-group-name">
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Publisher.html">Publisher</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Extensions/URLRequest.html">URLRequest</a>
               </li>
@@ -1179,6 +1188,245 @@ If you provide your own error model, rember to provide a validator, as the defau
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:4Ombi17ComposableRequestV12authenticate4withACyxq_q0_GAA0C14AuthenticationOSg_tF"></a>
+                    <a name="//apple_ref/swift/Method/authenticate(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Ombi17ComposableRequestV12authenticate4withACyxq_q0_GAA0C14AuthenticationOSg_tF">authenticate(with:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the request authentication</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">ComposableRequest</span><span class="o">&lt;</span><span class="kt">Any</span><span class="p">,</span> <span class="kt">Any</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">()</span>
+    <span class="o">.</span><span class="nf">authentication</span><span class="p">(</span><span class="o">.</span><span class="nf">token</span><span class="p">(</span><span class="o">.</span><span class="n">bearer</span><span class="p">,</span> <span class="s">"myToken"</span><span class="p">))</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">authenticate</span><span class="p">(</span><span class="n">with</span> <span class="nv">authentication</span><span class="p">:</span> <span class="kt"><a href="../Enums/RequestAuthentication.html">RequestAuthentication</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">ComposableRequest</span><span class="o">&lt;</span><span class="kt">RequestBody</span><span class="p">,</span> <span class="kt">ResponseBody</span><span class="p">,</span> <span class="kt">ResponseError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authentication</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The authentication</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The request</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Ombi17ComposableRequestV12authenticate4withACyxq_q0_GAA0C14AuthenticationOSgyc_tF"></a>
+                    <a name="//apple_ref/swift/Method/authenticate(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Ombi17ComposableRequestV12authenticate4withACyxq_q0_GAA0C14AuthenticationOSgyc_tF">authenticate(with:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the request authentication</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">ComposableRequest</span><span class="o">&lt;</span><span class="kt">Any</span><span class="p">,</span> <span class="kt">Any</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">authentication</span> <span class="p">{</span>
+        <span class="c1">/// ... logic to determine authentication ...</span>
+        <span class="k">return</span> <span class="o">.</span><span class="nf">token</span><span class="p">(</span><span class="o">.</span><span class="n">bearer</span><span class="p">,</span> <span class="s">"myToken"</span><span class="p">))</span>
+    <span class="p">}</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">authenticate</span><span class="p">(</span><span class="n">with</span> <span class="nv">authenticationBuilder</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Enums/RequestAuthentication.html">RequestAuthentication</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">ComposableRequest</span><span class="o">&lt;</span><span class="kt">RequestBody</span><span class="p">,</span> <span class="kt">ResponseBody</span><span class="p">,</span> <span class="kt">ResponseError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>authenticationBuilder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The closure that builds the authentication</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The request</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Ombi17ComposableRequestV12authenticate12withUsername8passwordACyxq_q0_GSS_SStF"></a>
+                    <a name="//apple_ref/swift/Method/authenticate(withUsername:password:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Ombi17ComposableRequestV12authenticate12withUsername8passwordACyxq_q0_GSS_SStF">authenticate(withUsername:<wbr>password:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the request authentication using basic username and password credentials</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">ComposableRequest</span><span class="o">&lt;</span><span class="kt">Any</span><span class="p">,</span> <span class="kt">Any</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span>
+    <span class="o">.</span><span class="nf">authentication</span><span class="p">(</span><span class="nv">withUsername</span><span class="p">:</span> <span class="s">"myUserName"</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="s">"myPassword"</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">authenticate</span><span class="p">(</span><span class="n">withUsername</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">password</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ComposableRequest</span><span class="o">&lt;</span><span class="kt">RequestBody</span><span class="p">,</span> <span class="kt">ResponseBody</span><span class="p">,</span> <span class="kt">ResponseError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>username</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Username</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>password</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Password</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The request</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Ombi17ComposableRequestV12authenticate9withToken4typeACyxq_q0_GSS_AA0C14AuthenticationO0F4TypeOtF"></a>
+                    <a name="//apple_ref/swift/Method/authenticate(withToken:type:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Ombi17ComposableRequestV12authenticate9withToken4typeACyxq_q0_GSS_AA0C14AuthenticationO0F4TypeOtF">authenticate(withToken:<wbr>type:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Set the request authentication using an authorization token</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">request</span> <span class="o">=</span> <span class="kt">ComposableRequest</span><span class="o">&lt;</span><span class="kt">Any</span><span class="p">,</span> <span class="kt">Any</span><span class="p">,</span> <span class="kt">Error</span><span class="o">&gt;</span>
+    <span class="o">.</span><span class="nf">authentication</span><span class="p">(</span><span class="nv">withToken</span><span class="p">:</span> <span class="s">"myToken"</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="o">.</span><span class="n">bearer</span><span class="p">)</span>
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">authenticate</span><span class="p">(</span><span class="n">withToken</span> <span class="nv">token</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Enums/RequestAuthentication.html">RequestAuthentication</a></span><span class="o">.</span><span class="kt">TokenType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ComposableRequest</span><span class="o">&lt;</span><span class="kt">RequestBody</span><span class="p">,</span> <span class="kt">ResponseBody</span><span class="p">,</span> <span class="kt">ResponseError</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>token</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The token</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>type</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The type of token</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>the request</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:4Ombi17ComposableRequestV16fallbackResponseyACyxq_q0_GAA0cE0Vyq_GSgF"></a>
                     <a name="//apple_ref/swift/Method/fallbackResponse(_:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:4Ombi17ComposableRequestV16fallbackResponseyACyxq_q0_GAA0cE0Vyq_GSgF">fallbackResponse(_:<wbr>)</a>
@@ -1987,6 +2235,33 @@ If you provide your own error model, rember to provide a validator, as the defau
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:4Ombi17ComposableRequestV14authenticationAA0C14AuthenticationOSgvp"></a>
+                    <a name="//apple_ref/swift/Property/authentication" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Ombi17ComposableRequestV14authenticationAA0C14AuthenticationOSgvp">authentication</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">authentication</span><span class="p">:</span> <span class="kt"><a href="../Enums/RequestAuthentication.html">RequestAuthentication</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:4Ombi11RequestableP16fallbackResponseAA07RequestD0Vy0D4BodyQzGSgvp"></a>
                     <a name="//apple_ref/swift/Property/fallbackResponse" class="dashAnchor"></a>
                     <a class="token" href="#/s:4Ombi11RequestableP16fallbackResponseAA07RequestD0Vy0D4BodyQzGSgvp">fallbackResponse</a>
@@ -2119,7 +2394,7 @@ If you provide your own error model, rember to provide a validator, as the defau
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://www.vsanthanam.com" target="_blank" rel="external">Varun Santhanam</a>. All rights reserved. (Last updated: 2021-06-06)</p>
+          <p>&copy; 2021 <a class="link" href="https://www.vsanthanam.com" target="_blank" rel="external">Varun Santhanam</a>. All rights reserved. (Last updated: 2021-06-14)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

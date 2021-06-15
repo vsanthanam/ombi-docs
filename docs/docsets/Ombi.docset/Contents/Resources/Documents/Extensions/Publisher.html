@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AutomaticBodyEncoding Protocol Reference</title>
+    <title>Publisher Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/AutomaticBodyEncoding" class="dashAnchor"></a>
-    <a title="AutomaticBodyEncoding Protocol Reference"></a>
+    <a name="//apple_ref/swift/Extension/Publisher" class="dashAnchor"></a>
+    <a title="Publisher Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Ombi 1.0.3 Docs</a> (93% documented)</p>
@@ -31,7 +31,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Ombi Reference</a>
         <img id="carat" src="../img/carat.png" />
-        AutomaticBodyEncoding Protocol Reference
+        Publisher Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -159,16 +159,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>AutomaticBodyEncoding</h1>
+            <h1>Publisher</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">AutomaticBodyEncoding</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">Publisher</span></code></pre>
 
                 </div>
               </div>
-            <p>A protocol for types that can be expressed as  <code>Data</code></p>
-
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -176,9 +175,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:4Ombi21AutomaticBodyEncodingP6asData10Foundation0F0VSgyKF"></a>
-                    <a name="//apple_ref/swift/Method/asData()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4Ombi21AutomaticBodyEncodingP6asData10Foundation0F0VSgyKF">asData()</a>
+                    <a name="/s:7Combine9PublisherP4OmbiE12removeErrorsAA10PublishersO12ReplaceErrorVy_xGyAD15RequestResponseVyqd__G6OutputRtzlF"></a>
+                    <a name="//apple_ref/swift/Method/removeErrors()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7Combine9PublisherP4OmbiE12removeErrorsAA10PublishersO12ReplaceErrorVy_xGyAD15RequestResponseVyqd__G6OutputRtzlF">removeErrors()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -186,16 +185,20 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Convert <code>self</code> into <code>Data?</code>, or throw and error</p>
+                        <p>Replace all errors with an empty response</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">asData</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Data</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">removeErrors</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Publishers</span><span class="o">.</span><span class="kt">ReplaceError</span><span class="o">&lt;</span><span class="k">Self</span><span class="o">&gt;</span> <span class="k">where</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Output</span> <span class="o">==</span> <span class="kt"><a href="../Structs/RequestResponse.html">RequestResponse</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A publisher that cannot error</p>
                       </div>
                     </section>
                   </div>

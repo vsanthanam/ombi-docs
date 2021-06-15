@@ -17,7 +17,7 @@
     <a title="RequestManager Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Ombi 1.0.2 Docs</a> (93% documented)</p>
+        <p><a href="../index.html">Ombi 1.0.3 Docs</a> (93% documented)</p>
         <p class="header-right"><a href="https://www.github.com/vsanthanam/Ombi"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdocs.ombi.network%2Fdocsets%2FOmbi.xml"><img src="../img/dash.png"/>Install in Dash</a></p>
         <p class="header-right">
@@ -52,6 +52,12 @@
                 <a href="../Enums/HTTPError.html">HTTPError</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/RequestAuthentication.html">RequestAuthentication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RequestAuthentication/TokenType.html">– TokenType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/RequestError.html">RequestError</a>
               </li>
               <li class="nav-group-task">
@@ -62,6 +68,9 @@
           <li class="nav-group-name">
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Publisher.html">Publisher</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Extensions/URLRequest.html">URLRequest</a>
               </li>
@@ -173,7 +182,7 @@
                                       <span class="nv">retries</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
                                       <span class="nv">sla</span><span class="p">:</span> <span class="o">.</span><span class="nf">seconds</span><span class="p">(</span><span class="mi">120</span><span class="p">),</span>
                                       <span class="nv">on</span><span class="p">:</span> <span class="kt">DispathQueue</span><span class="o">.</span><span class="n">main</span><span class="p">)</span>
-    <span class="o">.</span><span class="nf">replaceError</span><span class="p">(</span><span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">empty</span><span class="p">)</span>
+    <span class="o">.</span><span class="nf">removeErrors</span><span class="p">()</span>
     <span class="o">.</span><span class="nf">map</span><span class="p">(\</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
     <span class="o">.</span><span class="n">sink</span> <span class="p">{</span> <span class="n">responseBody</span> <span class="k">in</span>
         <span class="o">...</span>
@@ -483,6 +492,33 @@ To enable this, use one of the initializers that accept a log subsystem or an <c
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:4Ombi14RequestManagerC21requestAuthenticationAA0bE0OSgvp"></a>
+                    <a name="//apple_ref/swift/Property/requestAuthentication" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Ombi14RequestManagerC21requestAuthenticationAA0bE0OSgvp">requestAuthentication</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="k">var</span> <span class="nv">requestAuthentication</span><span class="p">:</span> <span class="kt"><a href="../Enums/RequestAuthentication.html">RequestAuthentication</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:4Ombi14RequestManagerC26shouldInjectDefaultHeadersSbvp"></a>
                     <a name="//apple_ref/swift/Property/shouldInjectDefaultHeaders" class="dashAnchor"></a>
                     <a class="token" href="#/s:4Ombi14RequestManagerC26shouldInjectDefaultHeadersSbvp">shouldInjectDefaultHeaders</a>
@@ -510,9 +546,9 @@ To enable this, use one of the initializers that accept a log subsystem or an <c
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:4Ombi14RequestManagerC04makeB0_7retries3sla2on8fallback7Combine12AnyPublisherVyAA0B8ResponseVy0L4BodyQzGAA0B5ErrorOy0lN0QzGGx_Si17SchedulerTimeType_6StrideQY_q_APSgtAA11RequestableRzAI0O0R_r0_lF"></a>
-                    <a name="//apple_ref/swift/Method/makeRequest(_:retries:sla:on:fallback:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4Ombi14RequestManagerC04makeB0_7retries3sla2on8fallback7Combine12AnyPublisherVyAA0B8ResponseVy0L4BodyQzGAA0B5ErrorOy0lN0QzGGx_Si17SchedulerTimeType_6StrideQY_q_APSgtAA11RequestableRzAI0O0R_r0_lF">makeRequest(_:<wbr>retries:<wbr>sla:<wbr>on:<wbr>fallback:<wbr>)</a>
+                    <a name="/s:4Ombi14RequestManagerC04makeB0_14authentication7retries3sla2on8fallback7Combine12AnyPublisherVyAA0B8ResponseVy0M4BodyQzGAA0B5ErrorOy0mO0QzGGx_AA0B14AuthenticationOSgSi17SchedulerTimeType_6StrideQY_q_AQSgtAA11RequestableRzAJ0Q0R_r0_lF"></a>
+                    <a name="//apple_ref/swift/Method/makeRequest(_:authentication:retries:sla:on:fallback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Ombi14RequestManagerC04makeB0_14authentication7retries3sla2on8fallback7Combine12AnyPublisherVyAA0B8ResponseVy0M4BodyQzGAA0B5ErrorOy0mO0QzGGx_AA0B14AuthenticationOSgSi17SchedulerTimeType_6StrideQY_q_AQSgtAA11RequestableRzAJ0Q0R_r0_lF">makeRequest(_:<wbr>authentication:<wbr>retries:<wbr>sla:<wbr>on:<wbr>fallback:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -528,6 +564,7 @@ To enable this, use one of the initializers that accept a log subsystem or an <c
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="n">makeRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">,</span> <span class="kt">S</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">requestable</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span>
+                                    <span class="nv">authentication</span><span class="p">:</span> <span class="kt"><a href="../Enums/RequestAuthentication.html">RequestAuthentication</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
                                     <span class="nv">retries</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
                                     <span class="nv">sla</span><span class="p">:</span> <span class="kt">S</span><span class="o">.</span><span class="kt">SchedulerTimeType</span><span class="o">.</span><span class="kt">Stride</span> <span class="o">=</span> <span class="o">.</span><span class="nf">seconds</span><span class="p">(</span><span class="mf">180.0</span><span class="p">),</span>
                                     <span class="n">on</span> <span class="nv">scheduler</span><span class="p">:</span> <span class="kt">S</span><span class="p">,</span>
@@ -600,9 +637,9 @@ To enable this, use one of the initializers that accept a log subsystem or an <c
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:4Ombi14RequestManagerC04makeB0_7retries3sla8fallback7Combine12AnyPublisherVyAA0B8ResponseVy0K4BodyQzGAA0B5ErrorOy0kM0QzGGx_SiSdAOSgtAA11RequestableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/makeRequest(_:retries:sla:fallback:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4Ombi14RequestManagerC04makeB0_7retries3sla8fallback7Combine12AnyPublisherVyAA0B8ResponseVy0K4BodyQzGAA0B5ErrorOy0kM0QzGGx_SiSdAOSgtAA11RequestableRzlF">makeRequest(_:<wbr>retries:<wbr>sla:<wbr>fallback:<wbr>)</a>
+                    <a name="/s:4Ombi14RequestManagerC04makeB0_14authentication7retries3sla8fallback7Combine12AnyPublisherVyAA0B8ResponseVy0L4BodyQzGAA0B5ErrorOy0lN0QzGGx_AA0B14AuthenticationOSgSiSdAPSgtAA11RequestableRzlF"></a>
+                    <a name="//apple_ref/swift/Method/makeRequest(_:authentication:retries:sla:fallback:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Ombi14RequestManagerC04makeB0_14authentication7retries3sla8fallback7Combine12AnyPublisherVyAA0B8ResponseVy0L4BodyQzGAA0B5ErrorOy0lN0QzGGx_AA0B14AuthenticationOSgSiSdAPSgtAA11RequestableRzlF">makeRequest(_:<wbr>authentication:<wbr>retries:<wbr>sla:<wbr>fallback:<wbr>)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -618,6 +655,7 @@ To enable this, use one of the initializers that accept a log subsystem or an <c
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">func</span> <span class="n">makeRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">requestable</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span>
+                                 <span class="nv">authentication</span><span class="p">:</span> <span class="kt"><a href="../Enums/RequestAuthentication.html">RequestAuthentication</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
                                  <span class="nv">retries</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
                                  <span class="nv">sla</span><span class="p">:</span> <span class="kt">TimeInterval</span> <span class="o">=</span> <span class="mf">180.0</span><span class="p">,</span>
                                  <span class="nv">fallback</span><span class="p">:</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Response</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">AnyPublisher</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">.</span><span class="kt">Response</span><span class="p">,</span> <span class="kt">T</span><span class="o">.</span><span class="kt">Failure</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Requestable.html">Requestable</a></span></code></pre>
@@ -679,7 +717,7 @@ To enable this, use one of the initializers that accept a log subsystem or an <c
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://www.vsanthanam.com" target="_blank" rel="external">Varun Santhanam</a>. All rights reserved. (Last updated: 2021-06-06)</p>
+          <p>&copy; 2021 <a class="link" href="https://www.vsanthanam.com" target="_blank" rel="external">Varun Santhanam</a>. All rights reserved. (Last updated: 2021-06-14)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

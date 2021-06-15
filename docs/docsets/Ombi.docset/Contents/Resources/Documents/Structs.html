@@ -17,7 +17,7 @@
     <a title="Structures  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Ombi 1.0.2 Docs</a> (93% documented)</p>
+        <p><a href="index.html">Ombi 1.0.3 Docs</a> (93% documented)</p>
         <p class="header-right"><a href="https://www.github.com/vsanthanam/Ombi"><img src="img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdocs.ombi.network%2Fdocsets%2FOmbi.xml"><img src="img/dash.png"/>Install in Dash</a></p>
         <p class="header-right">
@@ -52,6 +52,12 @@
                 <a href="Enums/HTTPError.html">HTTPError</a>
               </li>
               <li class="nav-group-task">
+                <a href="Enums/RequestAuthentication.html">RequestAuthentication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/RequestAuthentication/TokenType.html">– TokenType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Enums/RequestError.html">RequestError</a>
               </li>
               <li class="nav-group-task">
@@ -62,6 +68,9 @@
           <li class="nav-group-name">
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Publisher.html">Publisher</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Extensions/URLRequest.html">URLRequest</a>
               </li>
@@ -439,60 +448,6 @@ You can create a <code>RequestHeaders</code> using a dictionary litera containin
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:4Ombi6NoBodyV"></a>
-                    <a name="//apple_ref/swift/Struct/NoBody" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4Ombi6NoBodyV">NoBody</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">NoBody</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:4Ombi7NoErrorV"></a>
-                    <a name="//apple_ref/swift/Struct/NoError" class="dashAnchor"></a>
-                    <a class="token" href="#/s:4Ombi7NoErrorV">NoError</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">NoError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:4Ombi17RequestParametersV"></a>
                     <a name="//apple_ref/swift/Struct/RequestParameters" class="dashAnchor"></a>
                     <a class="token" href="#/s:4Ombi17RequestParametersV">RequestParameters</a>
@@ -503,7 +458,7 @@ You can create a <code>RequestHeaders</code> using a dictionary litera containin
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p><code>RequestParameters</code> are a type used to express values as a URL encoded form.</p>
 
                         <a href="Structs/RequestParameters.html" class="slightly-smaller">See more</a>
                       </div>
@@ -542,6 +497,60 @@ You can create a <code>RequestHeaders</code> using a dictionary litera containin
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">RequestResponse</span><span class="o">&lt;</span><span class="kt">Body</span><span class="o">&gt;</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">RequestResponse</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="k">where</span> <span class="kt">Body</span><span class="p">:</span> <span class="kt">Equatable</span></code></pre>
 <pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">RequestResponse</span><span class="p">:</span> <span class="kt">Hashable</span> <span class="k">where</span> <span class="kt">Body</span><span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Ombi6NoBodyV"></a>
+                    <a name="//apple_ref/swift/Struct/NoBody" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Ombi6NoBodyV">NoBody</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A type used to specialize <code><a href="Protocols/Requestable.html">Requestable</a></code> when you aren&rsquo;t concerned with body data</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">NoBody</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:4Ombi7NoErrorV"></a>
+                    <a name="//apple_ref/swift/Struct/NoError" class="dashAnchor"></a>
+                    <a class="token" href="#/s:4Ombi7NoErrorV">NoError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A type used to specialize <code><a href="Protocols/Requestable.html">Requestable</a></code> when you aren&rsquo;t concerned with response validation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">NoError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
 
                         </div>
                       </div>
@@ -609,7 +618,7 @@ You can create a <code>RequestHeaders</code> using a dictionary litera containin
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2021 <a class="link" href="https://www.vsanthanam.com" target="_blank" rel="external">Varun Santhanam</a>. All rights reserved. (Last updated: 2021-06-06)</p>
+          <p>&copy; 2021 <a class="link" href="https://www.vsanthanam.com" target="_blank" rel="external">Varun Santhanam</a>. All rights reserved. (Last updated: 2021-06-14)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
